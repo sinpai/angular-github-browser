@@ -16,7 +16,7 @@
                   required
                 >
             </div>
-            <button *ngIf="!showContinueBtn" class="btn btn-primary btn-block">Search</button>
+            <button [disabled]="form.invalid" *ngIf="!showContinueBtn" class="btn btn-primary btn-block">Search</button>
             <button *ngIf="showContinueBtn" class="btn btn-primary btn-block" routerLink='/info'>Get info about {{ user.login }}</button>
             <p *ngIf="searchingUser" class="mt-2 mb-2 text-center">
                 Please wait...
