@@ -9,7 +9,7 @@ import {Observable} from 'rxjs/Observable';
 })
 export class SearchUserComponent implements OnInit {
 
-    user: Observable<any>;
+    user: any;
     nickname: string;
     searchingUser: boolean;
     newMessage: string;
@@ -35,7 +35,7 @@ export class SearchUserComponent implements OnInit {
             this.searchingUser = false;
             this.showContinueBtn = true;
             this.newAppMessage.emit({
-              message: `We found user ${ user.login }`,
+              message: `We found user ${ this.user.login }`,
               error: false
             })
         }, error => {
