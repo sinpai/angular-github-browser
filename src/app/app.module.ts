@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { SearchUserComponent } from './components/search-user/search-user.component';
@@ -31,7 +32,7 @@ import { FooterComponent } from './components/footer/footer.component';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [GithubDataService],
+    providers: [GithubDataService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
